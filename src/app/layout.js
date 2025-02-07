@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,7 +45,7 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
-  
+
   return (
     <html lang="en">
       <head>
@@ -72,7 +73,15 @@ export default function RootLayout({ children }) {
             `,
           }}
         /> */}
-
+        {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7690670457022729"
+          crossorigin="anonymous"></script> */}
+        {/* Google Ads Script */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7690670457022729"
+          crossorigin="anonymous"
+          strategy="afterInteractive"
+        />
         {/* Google AdSense */}
         {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script
