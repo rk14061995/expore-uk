@@ -73,15 +73,31 @@ export default function RootLayout({ children }) {
             `,
           }}
         /> */}
+        {/* Google AdSense Script */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7690670457022729"
+          crossOrigin="anonymous"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-7690670457022729",
+                enable_page_level_ads: true
+              });
+            `,
+          }}
+        />
         {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7690670457022729"
-          crossorigin="anonymous"></script> */}
+          crossorigin="anonymous"></script>
         {/* Google Ads Script */}
-        <Script
+        {/* <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7690670457022729"
           crossorigin="anonymous"
           strategy="afterInteractive"
-        />
+        />  */}
         {/* Google AdSense */}
         {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script
