@@ -3,7 +3,7 @@ export default function AdditionalFooter() {
     // Contact information as a dynamic object
     const contact = {
         email: "hivalikanthi@gmail.com",
-        phone: "+91 1234567892",
+        phone: "+91 6397392256",
         address: "Village Patal, Pauri Garhwal, Uttarakhand, India",
         socialLinks: {
             facebook: {

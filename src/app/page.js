@@ -102,7 +102,7 @@ import Footer from "./common/footer/page";
 export default function Home() {
   const contact = {
     email: "hivalikanthi@gmail.com",
-    phone: "+91 1234567892",
+    phone: "+91 6397392256",
     address: "123, Main Street, Your City, Country",
     socialLinks: {
       facebook: "#",

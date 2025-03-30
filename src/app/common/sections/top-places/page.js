@@ -2,6 +2,7 @@ export default function Content(props) {
     const topPlaces = [
         {
             name: "London",
+            id:"london",
             heading: "Explore the Wonders of London",
             paraOne: "London, the capital of the United Kingdom, is a bustling metropolis known for its rich history, diverse culture, and iconic landmarks. From the majestic Buckingham Palace to the historic Tower of London, there's no shortage of must-see sights. Whether you're a history buff, an art lover, or someone looking to explore modern attractions, London offers something for everyone.",
             paraTwo: "One of London's most famous landmarks is the Tower of London, a UNESCO World Heritage site with a history dating back to 1066. Explore the medieval castle and its fascinating exhibits, including the Crown Jewels and the Yeoman Warders. Another iconic sight is the Houses of Parliament, where visitors can marvel at the Gothic architecture of Big Ben and the surrounding buildings along the River Thames.",
@@ -11,6 +12,7 @@ export default function Content(props) {
         },
         {
             name: "Edinburgh",
+            id:"edinburgh",
             heading: "Discover the Charm of Edinburgh",
             paraOne: "Edinburgh, the capital of Scotland, is known for its medieval Old Town, beautiful Georgian architecture, and the iconic Edinburgh Castle. Nestled amidst rolling hills, the city offers a blend of history, culture, and natural beauty, making it one of the most enchanting cities in the UK.",
             paraTwo: "The centerpiece of Edinburgh is the Edinburgh Castle, which offers stunning views over the city. Explore its fascinating history, including the Crown Jewels of Scotland, and enjoy the dramatic surroundings of the castle perched on Castle Rock. Stroll along the Royal Mile, a historic street connecting the castle to the Palace of Holyroodhouse, and discover hidden gems along the way.",
@@ -20,6 +22,7 @@ export default function Content(props) {
         },
         {
             name: "Bath",
+            id:"bath",
             heading: "Relax and Unwind in Bath",
             paraOne: "Bath, a UNESCO World Heritage city in southwest England, is famed for its Roman-built baths, stunning Georgian architecture, and natural hot springs. This charming city offers visitors the perfect combination of history, wellness, and beautiful scenery.",
             paraTwo: "The Roman Baths are a must-see, where you can explore the ancient baths, steam rooms, and the famous Great Bath. For a more relaxing experience, take a dip in the modern Thermae Bath Spa, where you can enjoy natural mineral-rich waters in the rooftop pool with views over the city.",
@@ -29,6 +32,7 @@ export default function Content(props) {
         },
         {
             name: "Lake District",
+            id:"lake",
             heading: "Explore the Beauty of the Lake District",
             paraOne: "The Lake District, located in northwest England, is known for its breathtaking landscapes, serene lakes, and picturesque villages. It’s a haven for outdoor enthusiasts, offering endless opportunities for hiking, boating, and exploring some of England’s most beautiful natural surroundings.",
             paraTwo: "The area is home to several stunning lakes, including Lake Windermere, the largest in England. Enjoy a boat ride across the lake or explore its shores on foot. The surrounding mountains, such as Scafell Pike, the highest peak in England, offer challenging hikes with spectacular views of the region.",
@@ -105,7 +109,7 @@ export default function Content(props) {
     return (
         <>
             {!isContentPage && topPlaces.map((place, index) => (
-                <div className="marketing_section layout_padding" key={index}>
+                <div className="marketing_section layout_padding" key={index} id={place.id}>
                     <div className="container-fluid">
                         <div className="row">
                             {/* For alternating image and text */}

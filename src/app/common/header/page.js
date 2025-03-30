@@ -4,24 +4,28 @@ export default function Header() {
     const places = [
         {
             name: 'London',
+            id:"london",
             url: 'london.html'
         },
         {
             name: 'Edinburgh',
-            url: 'edinburgh.html'
+            id:"edinburgh",
+            // url: 'edinburgh.html'
         },
         {
-            name: 'Manchester',
-            url: 'manchester.html'
+            name: 'Bath',
+            id:"bath",
+            // url: 'Bath.html'
         },
         {
-            name: 'Bristol',
-            url: 'bristol.html'
+            id:"lake",
+            name: 'Lake District',
+            // url: 'bristol.html'
         },
-        {
-            name: 'Liverpool',
-            url: 'liverpool.html'
-        }
+        // {
+        //     name: 'Liverpool',
+        //     url: 'liverpool.html'
+        // }
     ];
     return (
 
@@ -52,7 +56,7 @@ export default function Header() {
                             {
                                 places.map((place, index) => {
                                     return (
-                                        <a key={index} className="dropdown-item" href={place.url}>{place.name}</a>
+                                        <a key={index} className="dropdown-item" href={'#'+place.id}>{place.name}</a>
                                     )
                                 })
                             }
