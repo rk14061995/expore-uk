@@ -43,82 +43,55 @@ export const metadata = {
   canonical: "https://www.exploreuk.online"  // Set the canonical URL for your homepage to avoid duplicate content.
 };
 
-
+// AdSense script
+const adsenseScript = `
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "YOUR_ADSENSE_CLIENT_ID",
+    enable_page_level_ads: true
+  });
+`;
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en">
       <head>
         {/* Google Analytics Script */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDRR5CBCQL"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-CDRR5CBCQL');
-            `,
-          }}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-CDRR5CBCQL"
+          strategy="lazyOnload"
         />
-        {/* Google Tag Manager (gtag.js) */}
-        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDRR5CBCQL"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-CDRR5CBCQL');
-            `,
-          }}
-        /> */}
-        {/* Google AdSense Script */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7690670457022729"
-          crossOrigin="anonymous"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-7690670457022729",
-                enable_page_level_ads: true
-              });
-            `,
-          }}
-        />
-        {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7690670457022729"
-          crossorigin="anonymous"></script>
-        {/* Google Ads Script */}
-        {/* <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7690670457022729"
-          crossorigin="anonymous"
-          strategy="afterInteractive"
-        />  */}
-        {/* Google AdSense */}
-        {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "YOUR_ADSENSE_CLIENT_ID",
-                enable_page_level_ads: true
-              });
-            `,
-          }}
-        /> */}
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CDRR5CBCQL');
+          `}
+        </Script>
       </head>
 
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
 
+         {/* Google AdSense Script */}
+         <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+        <script dangerouslySetInnerHTML={{ __html: adsenseScript }} />
+
         {/* jQuery and Bootstrap JS */}
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <Script
+          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
